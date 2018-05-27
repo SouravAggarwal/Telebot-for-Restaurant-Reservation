@@ -3,7 +3,7 @@ A Telegram Chat Bot for Restaurant Table Reservation.
 
 ## On Telegram: Rest_resrv
 - Bot: Rest_resrv
-    -Command: /start
+    - Command: /start
     
     
  => Deployed On:

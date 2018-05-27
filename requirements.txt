@@ -1,0 +1,16 @@
+pyTelegramBotAPI==3.6.3
+qrcode==6.0
+redis==2.10.6
+requests==2.18.4
+imageio==2.2.0
+gmail==0.6.3
+Flask==0.12.2
+gunicorn==19.7.1
+gapic-google-cloud-datastore-v1==0.15.3
+gapic-google-cloud-error-reporting-v1beta1==0.15.3
+gapic-google-cloud-logging-v2==0.91.3
+google-api-core==0.1.4
+google-api-python-client==1.6.7
+google-auth==1.4.1
+google-cloud==0.33.1
+google-cloud-datastore==1.4.0

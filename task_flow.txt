@@ -1,0 +1,64 @@
+=> Task
+1.You have to use the Telegram API's to implement a bot for Restaurant table reservation. 
+2. Use Google App Engine(python), Git, NLP 
+3.Below is high-level flow/journey for the bot implementation 
+    3a. Welcome message from Restaurant_Name
+    3b. Use your imagination on how you would request to book a table. (give a choice of available tables etc for e.g.)
+    3c. The journey should be changed and customized if an old user is returning.
+    3d. Keep in mind the confirmation steps on e-mail and the bot.
+4. Use Google Datastore as your Database. 
+5. Do not use any open source or paid NLP/bot building frameworks/platforms. All code should be customed developed by yourself.
+
+================================================================================================================
+Solution:
+=> Using
+* Redis cache, TelegramBot api, python gmail
+* Google App Engine, Google Datastore, Google NLP api
+
+
+
+
+
+=> Flow:
+if user is not Registered:
+    random_welcome_msg: 'Hey {Username} Welcome to our Demo_Restaurant.',
+
+if user is Registerd:
+    "Welcome back messages"
+
+if user is Registered:
+	I see your last reservation was on {fetch last reservation detail}.
+	Would you like to book the table with same details?
+        if yes:
+            Just, Ask for Date, and Book a Reservation with last details.
+            Send confirmation on mail and send QR.
+
+	    if no:
+	        Ask for menu or want to do Reservation with new details
+
+
+Fresh Start:
+if user is not Registered:
+    Would you like to see the menu or book a table?
+
+    if he wants Menu:
+        Today's special is Demo Dish.
+        Here's our menu.
+        <Send Photo>
+
+    	Would like to book a table?.
+            if yes:
+                Ask for date, time, persons
+                Send confirmation on mail & send QR.
+
+	if he wants to Reserve a table:
+	    Ask for date, time, persons
+        Send confirmation on mail & send QR.
+
+    if he just want to know the open timings
+        send time
+        and do /start
+
+
+    else I didn't get that , do
+        /start

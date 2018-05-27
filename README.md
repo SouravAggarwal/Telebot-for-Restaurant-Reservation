@@ -6,5 +6,6 @@ A Telegram Chat Bot for Restaurant Table Reservation.
     - Command: /start
     
     
- => Deployed On:
- *Google Cloud, 
+ ### Stack:
+    - Google Cloud, Google Datastore, Google NLP
+    - TelegramBot api, Redis, 

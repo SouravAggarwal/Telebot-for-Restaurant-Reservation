@@ -1,5 +1,6 @@
 pyTelegramBotAPI==3.6.3
 qrcode==6.0
+#sudo apt-get install redis-server
 redis==2.10.6
 requests==2.18.4
 imageio==2.2.0

@@ -67,9 +67,9 @@ def resigtered_person(message):
     l_date = last_data["Reservations"][last_time]["date"]
     l_person = last_data["Reservations"][last_time]["person"]
 
-    m1 = f"I see your last reservation was on {l_date}. \n"
-    m2 = f"for {l_person} persons at {l_time}. \n"
-    m3 = "Would you like to book with the same details? \n \n"
+    m1 = f"I see your last reservation was on {l_date}. \n "
+    m2 = f"for {l_person} persons at {l_time}. \n "
+    m3 = "Would you like to book with the same details? \n "
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     b1 = types.KeyboardButton('Yes')
@@ -83,7 +83,7 @@ def want_tobook_same(message):
     chat_id = message.chat.id
     if "no" in str(message.text).lower():
         m1 = "So, Would you like to see our New Menu \n "
-        m2 = "or \n Want to Reserve Table with new Details. \n"
+        m2 = "or \n Want to Reserve Table with new Details. \n "
         new_person(message, m1 + m2)
 
     if "yes" in str(message.text).lower():
@@ -262,7 +262,7 @@ def show_booking_details(message):
     r_time = r.get(str(chat_id) + "time")
 
     t1 = f"Reserving a Table for {r_no_of_person.decode('utf-8')} persons \n " \
-         f"on {r_date.decode('utf-8')} at {r_time.decode('utf-8')} \n"
+         f"on {r_date.decode('utf-8')} at {r_time.decode('utf-8')} \n "
     bot.send_message(chat_id, t1)
 
 
@@ -289,14 +289,14 @@ def raw_text(message):
         y = 1
 
     if "menu" in results["wordslist"] or "menu card" in results["wordslist"]:
-        h_menu(chat_id);
+        h_menu(chat_id)
         x = 1
 
     elif "table" in results["wordslist"] or "reservation" in results["wordslist"] or \
-            ("yes" in (message.text).lower() and \
+            ("yes" in (message.text).lower() and
              ((r.get(str(chat_id) + "last_ques").decode("utf-8") == "TABLE_RESERVATION"))
              and "menu" not in results["wordslist"]):
-        h_reservation(chat_id);
+        h_reservation(chat_id)
         x = 1
 
     elif "timings" in results["wordslist"] or "timing" in results["wordslist"]:
@@ -308,7 +308,7 @@ def raw_text(message):
 
     elif not x and y:
 
-        t2 = "Sorry I didn't get that \n If you want to Start Again.  \n" \
+        t2 = "Sorry I didn't get that \n If you want to Start Again.  \n " \
              "Click /start"
         bot.send_message(chat_id, t2)
 

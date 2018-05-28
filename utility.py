@@ -60,12 +60,18 @@ def set_lastdata_as_new(message):
 
 
 def gmail_msg(message):
+    name =""
+    try:
+        name=message.from_user.first_name
+    except:
+        pass
     try:
         chat_id = message.chat.id
         r_date = r.get(str(chat_id) + "date")
         r_no_of_person = r.get(str(chat_id) + "no_persons")
         r_time = r.get(str(chat_id) + "time")
-        msg = f"Your booking are confirmed for {r_no_of_person} persons on {r_date} at {r_time}. "
+        msg = f" Hi {name}, \n Your booking are confirmed for {r_no_of_person.decode('utf-8')} persons " \
+              f"on {r_date.decode('utf-8')} at {r_time.decode('utf-8')}. "
         gmail = GMail(c.gmail_id, c.gmail_pass)
 
         mail = Message('Demo_Restaurant', to=str(message.text), text=msg)
@@ -76,4 +82,3 @@ def gmail_msg(message):
 
 if __name__ == "__main__":
     print(r.get("helll"))
-

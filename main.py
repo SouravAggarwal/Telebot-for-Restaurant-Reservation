@@ -173,13 +173,14 @@ def get_date_input(call):
 
             if is_new_usr:
                 bot.send_message(chat_id, t1)
-                get_time(chat_id)
+                get_time(call.message)
             else:
                 sent1 = bot.send_message(chat_id, t1)
                 bot.register_next_step_handler(sent1, confirmation)
 
 
-def get_time(chat_id):
+def get_time(message):
+    chat_id = message.chat.id
     t1 = "At What time? "
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     b1 = types.KeyboardButton("9:00 - 12:00 (Morning)")
@@ -206,11 +207,13 @@ def confirmation(message):
         res = util._check_(message.text)
         # Check res, if new user then it must contain Morn, Even, After, else 0
         if not res:
-            t5 = "Sorry didn't get that. \n Let's start again! \n "
-            t6 = "/start"
-            bot.send_message(chat_id, t5 + t6)
-            welcome_msg(message)
 
+            t5 = "Sorry, I am not able to understand that. \n Can you Plz pick a option. \n "
+
+            sent4=bot.send_message(chat_id, t5 )
+            get_time(message)
+            #bot.register_next_step_handler(sent4, get_time)
+            return
         r.set(str(chat_id) + "time", res)
 
     if not is_new_usr:
@@ -313,8 +316,9 @@ def raw_text(message):
         bot.send_message(chat_id, t2)
 
 
-while True:
-    try:
-        bot.polling(none_stop=False, interval=0, timeout=20)
-    except:
-        print("Exception")
+bot.polling(none_stop=True, interval=0, timeout=20)
+# while True:
+#     try:
+#
+#     except:
+#         print("Exception")

@@ -32,7 +32,7 @@ def save_to_datastore(message):
 
 
 def _check_(msg):
-    lst = ["Morning", "Afternoon", "Evneing", "Night"]
+    lst = ["Morning", "Afternoon", "Evening", "Night"]
     for i in lst:
         if i.lower() in msg.lower():
             return i

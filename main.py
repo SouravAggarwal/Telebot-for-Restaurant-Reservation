@@ -312,10 +312,9 @@ def raw_text(message):
              "Click /start"
         bot.send_message(chat_id, t2)
 
+
 while True:
-	try:
-		bot.polling(none_stop=False, interval=0, timeout=20)
-	except e:
-		print("Exception", c)
-
-
+    try:
+        bot.polling(none_stop=False, interval=0, timeout=20)
+    except:
+        print("Exception")

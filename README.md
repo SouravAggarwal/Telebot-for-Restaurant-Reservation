@@ -10,7 +10,7 @@ Demo Video: https://drive.google.com/open?id=10cuko9LRsFTMmNHQZA1SM_-ENbvpo4LD
 - Command:
     - /start
 - Queries:
-    - can I see your menu?
+    - can I see the menu?
     - can you reserve a table for me.
     - just want to know about your timings
     

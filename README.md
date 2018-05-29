@@ -10,8 +10,8 @@ Demo Video: https://drive.google.com/open?id=10cuko9LRsFTMmNHQZA1SM_-ENbvpo4LD
 - Command:
     - /start
 - Queries:
-    - Can I see your menu?
-    - Plz do a table reservation for me.
+    - can I see your menu?
+    - can you reserve a table for me.
     - just want to know about your timings
     
  ### It uses:

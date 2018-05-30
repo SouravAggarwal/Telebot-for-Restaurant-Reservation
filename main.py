@@ -316,9 +316,9 @@ def raw_text(message):
         bot.send_message(chat_id, t2)
 
 
-bot.polling(none_stop=True, interval=0, timeout=20)
-# while True:
-#     try:
-#
-#     except:
-#         print("Exception")
+
+while True:
+    try:
+    bot.polling(none_stop=True, interval=0, timeout=20)
+    except:
+        print("Exception")

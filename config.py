@@ -15,6 +15,7 @@ gmail_pass = "srv123456"
 
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
+#sudo service redis-server status
 host="redis-13990.c1.us-east1-2.gce.cloud.redislabs.com"
 port=13990
 #r = redis.StrictRedis(host=host, port=port, db=0)
